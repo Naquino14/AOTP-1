@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>AOTP_1</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ACH-1 Demonstrator">
+      <HintPath>..\..\ACH-1\ACH-1 Demonstrator\ACH-1 Demonstrator\bin\Release\net6.0\ACH-1 Demonstrator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
