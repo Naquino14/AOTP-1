@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Reference Include="ACH-1 Demonstrator">
-      <HintPath>..\..\ACH-1\ACH-1 Demonstrator\ACH-1 Demonstrator\bin\Release\net6.0\ACH-1 Demonstrator.dll</HintPath>
+      <HintPath>..\ACH-1\ACH-1 Demonstrator\ACH-1 Demonstrator\bin\Release\net6.0\ACH-1 Demonstrator.dll</HintPath>
     </Reference>
   </ItemGroup>
 

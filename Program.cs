@@ -24,7 +24,8 @@ internal class Program {
         }
 
         Console.WriteLine("Enter a duration (default 30 seconds):");
-        line = Console.ReadLine() ?? "30";
+        line = Console.ReadLine();
+        line = line == "" ? "30" : line;
         if (!int.TryParse(line, out int duration)) {
             Console.WriteLine("Not a valid time number.");
             return;
@@ -33,8 +34,8 @@ internal class Program {
         Console.WriteLine();
 
 
+        AOTP1 aotp = new(key, epoch, duration);
         for (; ; ) {
-            AOTP1 aotp = new(key, epoch, duration);
             Console.WriteLine($"Code: {aotp.OTP[0]:X}{aotp.OTP[1]:X}{aotp.OTP[2]:X}{aotp.OTP[3]:X}\r");
             Thread.Sleep(1000);
         }

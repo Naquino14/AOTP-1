@@ -4,13 +4,26 @@ namespace ADIS {
     public class AOTP1 {
         const int KEY_SIZE = 16;
 
+        /// <summary>
+        /// The current code string.
+        /// </summary>
+        /// 
         public string Code { get => GetCode(); }
+        /// <summary>
+        /// The current OTP.
+        /// </summary>
         public byte[] OTP { get => GetOTP(); }
 
         private byte[] Key { get; init; }
         private long Epoch { get; init; }
         private int Duration { get; init; }
 
+        /// <summary>
+        /// Constructs a new AOTP using the specified parameters.
+        /// </summary>
+        /// <param name="key">The private key to be used in the HMAC.</param>
+        /// <param name="epoch">The Unix timetamp epoch to be used.</param>
+        /// <param name="duration">The duration of the OTP codes.</param>
         public AOTP1(byte[] key, long epoch, int duration) {
             this.Epoch = epoch;
             this.Duration = duration;
@@ -19,8 +32,16 @@ namespace ADIS {
                 this.Key[i] = key[i];
         }
 
+        /// <summary>
+        /// Gets the current code string.
+        /// </summary>
+        /// <returns>The code string.</returns>
         public string GetCode() => "NYI"; // TODO
 
+        /// <summary>
+        /// Gets the current OTP.
+        /// </summary>
+        /// <returns>The current OTP.</returns>
         public byte[] GetOTP() {
             var result = new byte[4]; // result is a word
 
@@ -80,7 +101,7 @@ namespace ADIS {
         /// </summary>
         /// <param name="input">The input</param>
         /// <returns>The 32 byte digest</returns>
-        static byte[] CompressDigest(byte[] input) {
+        private static byte[] CompressDigest(byte[] input) {
             var result = new byte[32];
             // otp the hash on itself
             for (int i = 0; i < 32; i++)
